@@ -25,7 +25,9 @@ ListNode *deleteDuplicates(ListNode *head) {
 
     for(ListNode *p=head; p && p->next; ){
         if (p->val == p->next->val){
+            ListNode *temp = p->next
             p->next = p->next->next;
+            free(temp);
             continue;
         }
         p=p->next;
